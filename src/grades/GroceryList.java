@@ -48,7 +48,7 @@ public class GroceryList {
         if(addAnotherItem == 1){
             createList();
         }else if(addAnotherItem == 2) {
-//            finalizeFunction();
+            finalizeFunction();
         }
     }
 
@@ -82,6 +82,12 @@ public class GroceryList {
             return getInt();
         }
 
+    }
+
+    public static void finalizeFunction(){
+        for (String item : groceryList.values()){
+            System.out.println(item);
+        }
     }
 
 }
