@@ -85,9 +85,60 @@ public class GroceryList {
     }
 
     public static void finalizeFunction(){
+        String dairyItems = "";
+        String produceItems = "";
+        String breadItems = "";
+        String meatItems = "";
+        String frozenItems = "";
+        String nonfoodItems = "";
+
         for (String item : groceryList.values()){
-            System.out.println(item);
+            for(String itemKey : groceryList.keySet()){
+                if(groceryList.get(itemKey).equalsIgnoreCase(item)){
+                }
+            }
+            if(item.contains("Dairy")){
+                for(String itemKey : groceryList.keySet()){
+                    if(groceryList.get(itemKey).equalsIgnoreCase(item)){
+                        dairyItems += groceryList.get(item) + "\n";
+                    }
+                }
+            }else if(item.contains("Produce")){
+                for(String itemKey : groceryList.keySet()){
+                    if(groceryList.get(itemKey).equalsIgnoreCase(item)){
+                        produceItems += groceryList.get(item) + "\n";
+                    }
+                }
+            }else if(item.contains("Bread")){
+                for(String itemKey : groceryList.keySet()){
+                    if(groceryList.get(itemKey).equalsIgnoreCase(item)){
+                        breadItems += groceryList.get(item) + "\n";
+                    }
+                }
+            }else if(item.contains("Meat")){
+                for(String itemKey : groceryList.keySet()){
+                    if(groceryList.get(itemKey).equalsIgnoreCase(item)){
+                        meatItems += groceryList.get(item) + "\n";
+                    }
+                }
+            }else if(item.contains("Frozen Food")){
+                for(String itemKey : groceryList.keySet()){
+                    if(groceryList.get(itemKey).equalsIgnoreCase(item)){
+                        frozenItems += groceryList.get(item) + "\n";
+                    }
+                }
+            }else if(item.contains("Nonfood")){
+                for(String itemKey : groceryList.keySet()){
+                    if(groceryList.get(itemKey).equalsIgnoreCase(item)){
+                        nonfoodItems += groceryList.get(item) + "\n";
+                    }
+                }
+            }
         }
+
+        String finalList = dairyItems + produceItems + breadItems + meatItems + frozenItems + nonfoodItems;
+
+        System.out.println(finalList);
     }
 
 }
