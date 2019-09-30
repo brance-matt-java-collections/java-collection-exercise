@@ -30,12 +30,5 @@ public class Student {
 
     }
 
-    public static void main(String[] args) {
-        Student testStudent = new Student("Jimbob");
-
-        testStudent.addGrade(60);
-        testStudent.addGrade(55);
-        System.out.println(testStudent.getGradeAverage());
-    }
 
 }
