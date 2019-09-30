@@ -1,8 +1,6 @@
 package grades;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class GroceryList {
     private  static ArrayList<GroceryItem> bigList = new ArrayList<>();
@@ -34,9 +32,13 @@ public class GroceryList {
         if(addAnotherItem == 1){
             createList();
         }else if(addAnotherItem == 2) {
-//            finalizeFunction();
-            System.out.println(bigList.get(0));
-            System.out.println();
+            printDairy();
+            printProduce();
+            printBread();
+            printMeat();
+            printFrozenFood();
+            printNonfood();
+
         }
 
 
@@ -75,20 +77,64 @@ public class GroceryList {
 
     }
 
-    public static void finalizeFunction(){
-//        loop with keyset, if we .get key that we see if .contains whatever the category contains.
-//        for (String item : groceryList.keySet() ){
-//            System.out.println(groceryList.get(item).contains("Bread"));
-//            if ()
-//        }
+    public static void printDairy(){
+        for(GroceryItem item : bigList){
+            if(item.getCategory().equalsIgnoreCase("Dairy")){
+                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+            }
+        }
+    }
 
-        category.add("Dairy");
-        category.add("Produce");
-        category.add("Bread");
-        category.add("Meat");
-        category.add("Frozen Food");
-        category.add("Nonfood");
-        System.out.println(category);
+    public static void printProduce(){
+        for(GroceryItem item : bigList){
+            if(item.getCategory().equalsIgnoreCase("Produce")){
+                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+            }
+        }
+    }
+
+    public static void printBread(){
+        for(GroceryItem item : bigList){
+            if(item.getCategory().equalsIgnoreCase("Bread")){
+                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+            }
+        }
+    }
+
+    public static void printMeat(){
+        for(GroceryItem item : bigList){
+            if(item.getCategory().equalsIgnoreCase("Meat")){
+                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+            }
+        }
+    }
+
+    public static void printFrozenFood(){
+        for(GroceryItem item : bigList){
+            if(item.getCategory().equalsIgnoreCase("Frozen Food")){
+                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+            }
+        }
+    }
+
+    public static void printNonfood(){
+        for(GroceryItem item : bigList){
+            if(item.getCategory().equalsIgnoreCase("Bread")){
+                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+            }
+        }
+    }
+
+    public static void sortAlpha(){
+        int length = bigList.size();
+        String[] tempArray = new String[length];
+        for (int i = 0; i < length; i++){
+            tempArray[i] = bigList.get(i).getName();
+        }
+
+        Arrays.sort(tempArray);
+
+        for()
 
     }
 
