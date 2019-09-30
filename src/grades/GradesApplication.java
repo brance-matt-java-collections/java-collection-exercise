@@ -1,10 +1,12 @@
 package grades;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class GradesApplication {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
         HashMap<String, Student> students = new HashMap<>();
 
@@ -29,7 +31,37 @@ public class GradesApplication {
         students.get("davidandstephens").addGrade(36);
         students.get("davidandstephens").addGrade(91);
 
-        System.out.println(students.get("BranceA").getGradeAverage());
+//        System.out.println(students.get("BranceA").getGradeAverage());
+
+        Boolean loop = true;
+
+        do {
+        System.out.println("Welcome!\n\n");
+        System.out.println("Here are the GitHub usernames of our students: \n");
+        for (String student : students.keySet() ){
+            System.out.print("|" + student + "| ");
+        }
+        System.out.println("\n");
+        System.out.println("What student do you want to creep on?");
+        String userinput = input.nextLine();
+
+        for (String student : students.keySet()){
+            if(student.equalsIgnoreCase(userinput)){
+                Student selStudent = students.get(userinput);
+                System.out.format("Name %s - GitHub Username: %s\nCurrent Average: %.2f\n",selStudent.getName(), student, selStudent.getGradeAverage() );
+            }
+        }
+            System.out.println("Would you like to keep going?");
+        String answer = input.nextLine();
+        if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes") ){
+            System.out.println("Cool! Lets do it!");
+        }else {
+            loop = false;
+        }
+        }while (loop);
+
+
+
 
     }
 
