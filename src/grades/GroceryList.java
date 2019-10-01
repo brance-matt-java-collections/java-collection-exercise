@@ -1,8 +1,6 @@
 package grades;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class GroceryList {
     private  static ArrayList<GroceryItem> bigList = new ArrayList<>();
@@ -34,9 +32,13 @@ public class GroceryList {
         if(addAnotherItem == 1){
             createList();
         }else if(addAnotherItem == 2) {
-//            finalizeFunction();
-            System.out.println(bigList.get(0));
-            System.out.println();
+            printDairy();
+            printProduce();
+            printBread();
+            printMeat();
+            printFrozenFood();
+            printNonfood();
+
         }
 
 
@@ -75,20 +77,69 @@ public class GroceryList {
 
     }
 
-    public static void finalizeFunction(){
-//        loop with keyset, if we .get key that we see if .contains whatever the category contains.
-//        for (String item : groceryList.keySet() ){
-//            System.out.println(groceryList.get(item).contains("Bread"));
-//            if ()
-//        }
+    public static void printDairy(){
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Dairy")){
+                System.out.println(item);
+            }
+        }
+    }
 
-        category.add("Dairy");
-        category.add("Produce");
-        category.add("Bread");
-        category.add("Meat");
-        category.add("Frozen Food");
-        category.add("Nonfood");
-        System.out.println(category);
+    public static void printProduce(){
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Produce")){
+                System.out.println(item);
+            }
+        }
+    }
+
+    public static void printBread(){
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Bread")){
+                System.out.println(item);
+            }
+        }
+    }
+
+    public static void printMeat(){
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Meat")){
+                System.out.println(item);
+            }
+        }
+    }
+
+    public static void printFrozenFood(){
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Frozen Food")){
+                System.out.println(item);
+            }
+        }
+    }
+
+    public static void printNonfood(){
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Nonfood")){
+                System.out.println(item);
+            }
+        }
+    }
+
+    public static String[] sortAlpha(){
+        int length = bigList.size();
+        String[] tempArray = new String[length];
+        for (int i = 0; i < length; i++){
+            tempArray[i] = bigList.get(i).getName() + "| Number to Buy: " + bigList.get(i).getQuantity() + "| Category: " + bigList.get(i).getCategory() + "\n";
+        }
+
+        Arrays.sort(tempArray);
+        return tempArray;
 
     }
 
