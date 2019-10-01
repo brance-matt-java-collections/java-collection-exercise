@@ -78,63 +78,68 @@ public class GroceryList {
     }
 
     public static void printDairy(){
-        for(GroceryItem item : bigList){
-            if(item.getCategory().equalsIgnoreCase("Dairy")){
-                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Dairy")){
+                System.out.println(item);
             }
         }
     }
 
     public static void printProduce(){
-        for(GroceryItem item : bigList){
-            if(item.getCategory().equalsIgnoreCase("Produce")){
-                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Produce")){
+                System.out.println(item);
             }
         }
     }
 
     public static void printBread(){
-        for(GroceryItem item : bigList){
-            if(item.getCategory().equalsIgnoreCase("Bread")){
-                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Bread")){
+                System.out.println(item);
             }
         }
     }
 
     public static void printMeat(){
-        for(GroceryItem item : bigList){
-            if(item.getCategory().equalsIgnoreCase("Meat")){
-                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Meat")){
+                System.out.println(item);
             }
         }
     }
 
     public static void printFrozenFood(){
-        for(GroceryItem item : bigList){
-            if(item.getCategory().equalsIgnoreCase("Frozen Food")){
-                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Frozen Food")){
+                System.out.println(item);
             }
         }
     }
 
     public static void printNonfood(){
-        for(GroceryItem item : bigList){
-            if(item.getCategory().equalsIgnoreCase("Bread")){
-                System.out.println(item.getName() + "| Number to Buy: " + item.getQuantity() + "| Category: " + item.getCategory());
+        String[] sortedArray = sortAlpha();
+        for(String item : sortedArray){
+            if(item.contains("Nonfood")){
+                System.out.println(item);
             }
         }
     }
 
-    public static void sortAlpha(){
+    public static String[] sortAlpha(){
         int length = bigList.size();
         String[] tempArray = new String[length];
         for (int i = 0; i < length; i++){
-            tempArray[i] = bigList.get(i).getName();
+            tempArray[i] = bigList.get(i).getName() + "| Number to Buy: " + bigList.get(i).getQuantity() + "| Category: " + bigList.get(i).getCategory() + "\n";
         }
 
         Arrays.sort(tempArray);
-
-        for()
+        return tempArray;
 
     }
 
